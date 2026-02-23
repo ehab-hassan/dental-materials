@@ -7,7 +7,10 @@ export default function AboutSection() {
             Over 35 Years of Excellence
           </h2>
           <p className="mt-6 text-lg text-slate-600">
-            Acrostone has been the trusted name in dental and medical supplies since 1986. We partner with world-renowned brands to bring the best products to practices across Egypt and the region. Quality, reliability, and expert support are at the heart of everything we do.
+          Kamel El-Wahsh, the company was founded with a vision to provide high-quality, reliable dental solutions to professionals across Egypt.
+          <br />
+          <br />
+          Today, we partner with world-renowned brands to bring the best products to practices across Egypt and the region. Quality, reliability, and expert support remain at the heart of everything we do.
           </p>
         </div>
       </div>

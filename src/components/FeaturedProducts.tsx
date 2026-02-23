@@ -1,29 +1,35 @@
 import Link from "next/link";
+import Image from "next/image";
+
+import waterpikImg from "@/images/waterpik.jpg";
+import acrostoneDentalImg from "@/images/Acrostone Dental.jpg";
+import glovesImg from "@/images/gloves.png";
+import septodontImg from "@/images/Septodont.jpeg";
 
 const products = [
   {
     tag: "Waterpik",
     name: "Waterpik Cordless Advanced",
     description: "Portable water flosser for on the go oral care.",
-    bg: "from-slate-100 to-slate-200",
+    image: waterpikImg,
   },
   {
     tag: "Acrostone Dental",
     name: "Professional Composite Kit",
     description: "Complete composite restoration system.",
-    bg: "from-sky-50 to-slate-100",
+    image: acrostoneDentalImg,
   },
   {
     tag: "Gloves",
     name: "Nitrile Examination Gloves",
     description: "Premium powder free nitrile gloves.",
-    bg: "from-emerald-50 to-slate-100",
+    image: glovesImg,
   },
   {
     tag: "Septodont",
     name: "Septanest Anesthetic",
     description: "Fast acting dental anesthesia solution.",
-    bg: "from-rose-50 to-slate-100",
+    image: septodontImg,
   },
 ];
 
@@ -56,12 +62,14 @@ export default function FeaturedProducts() {
               key={i}
               className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white hover-lift"
             >
-              <div className={`flex h-44 items-center justify-center bg-gradient-to-br ${product.bg}`}>
-                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white/80 text-[#0c4a6e] shadow-sm">
-                  <svg className="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                  </svg>
-                </div>
+              <div className="relative aspect-square w-full overflow-hidden bg-slate-100">
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
+                />
               </div>
               <div className="flex flex-1 flex-col p-5">
                 <span className="inline-block w-fit rounded bg-[#0ea5e9]/10 px-2.5 py-0.5 text-xs font-semibold text-[#0c4a6e]">

@@ -41,9 +41,9 @@ export default function OurPartners() {
                   <Image
                     src={partner.image}
                     alt={partner.name}
-                    className="max-h-12 w-auto object-contain"
-                    width={120}
-                    height={48}
+                    className="max-h-20 w-auto object-contain sm:max-h-24"
+                    width={180}
+                    height={96}
                   />
                 ) : (
                   <span className="text-base font-semibold text-slate-700">{partner.name}</span>
@@ -61,9 +61,9 @@ export default function OurPartners() {
                   <Image
                     src={partner.image}
                     alt={partner.name}
-                    className="max-h-12 w-auto object-contain"
-                    width={120}
-                    height={48}
+                    className="max-h-20 w-auto object-contain sm:max-h-24"
+                    width={180}
+                    height={96}
                   />
                 ) : (
                   <span className="text-base font-semibold text-slate-700">{partner.name}</span>
