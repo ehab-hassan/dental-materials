@@ -80,7 +80,7 @@ export default function Navbar() {
 
         <div className="hidden items-center gap-4 md:flex">
           <Link
-            href={isHome ? "#contact" : "/#contact"}
+            href={isHome ? "products" : "/products"}
             className="rounded-lg bg-[#0ea5e9] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#0284c7]"
           >
             Shop Now

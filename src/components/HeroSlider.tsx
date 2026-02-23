@@ -7,12 +7,14 @@ import Image from "next/image";
 import hero1 from "@/images/hero1.jpg";
 import hero2 from "@/images/hero2.png";
 import hero3 from "@/images/hero3.png";
+import waterpikLogo from "@/images/waterpik_logo.png";
 import medisporexLogo from "@/images/medisporex.png";
 
 const slides = [
   {
-    title: "WATERPIK® ",
-    subtitle: "Smart engineering meets superior cleaning performance.",
+    title: "Waterpik",
+    titleLogo: waterpikLogo,
+    subtitle: "Advanced water-flossing technology designed to deliver deep interdental cleaning, improve gum health, and enhance patient oral hygiene with clinically proven performance..",
     cta: "Shop Now",
     href: "#about",
     image: hero1,
@@ -101,12 +103,12 @@ export default function HeroSlider() {
             <div className="relative z-10 w-full max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto">
               <div className={`max-w-4xl text-white ${i === 0 ? "text-left" : "mx-auto text-center"}`}>
               {"titleLogo" in slide && slide.titleLogo ? (
-                <div className="relative w-full max-w-md mx-auto animate-fade-in">
+                <div className={`relative w-full max-w-xs animate-fade-in sm:max-w-sm ${i === 0 ? "" : "mx-auto"}`}>
                   <Image
                     src={slide.titleLogo}
-                    alt="Medisporex"
-                    width={400}
-                    height={120}
+                    alt={slide.title}
+                    width={200}
+                    height={50}
                     className="w-full h-auto object-contain"
                   />
                 </div>
@@ -118,14 +120,16 @@ export default function HeroSlider() {
               <p className={`mt-4 max-w-2xl text-lg text-white/90 sm:text-xl animate-fade-in ${i >= 1 ? "mx-auto text-center" : ""}`}>
                 {slide.subtitle}
               </p>
-              <div className="mt-8 animate-fade-in">
-                <Link
-                  href={slide.href}
-                  className="inline-flex items-center rounded-lg bg-[#0ea5e9] px-6 py-3.5 text-base font-semibold text-white shadow-lg transition hover:bg-[#0284c7]"
-                >
-                  {slide.cta}
-                </Link>
-              </div>
+              {i !== 1 && (
+                <div className="mt-8 animate-fade-in">
+                  <Link
+                    href={slide.href}
+                    className="inline-flex items-center rounded-lg bg-[#0ea5e9] px-6 py-3.5 text-base font-semibold text-white shadow-lg transition hover:bg-[#0284c7]"
+                  >
+                    {slide.cta}
+                  </Link>
+                </div>
+              )}
             </div>
             </div>
           </div>
