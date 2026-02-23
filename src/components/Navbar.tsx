@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 import acrostoneLogo from "@/images/acrostone_logo.png";
@@ -14,7 +15,9 @@ const navLinks = [
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const isHome = pathname === "/";
 
   const handleAboutClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -40,13 +43,29 @@ export default function Navbar() {
           {navLinks.map((link) => (
             <li key={link.href}>
               {link.href === "#about" ? (
-                <a
-                  href="#about"
-                  onClick={handleAboutClick}
+                isHome ? (
+                  <a
+                    href="#about"
+                    onClick={handleAboutClick}
+                    className="text-sm font-medium text-slate-700 transition-colors hover:text-[#0c4a6e]"
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    href="/#about"
+                    className="text-sm font-medium text-slate-700 transition-colors hover:text-[#0c4a6e]"
+                  >
+                    {link.label}
+                  </Link>
+                )
+              ) : link.href.startsWith("#") ? (
+                <Link
+                  href={isHome ? link.href : `/${link.href}`}
                   className="text-sm font-medium text-slate-700 transition-colors hover:text-[#0c4a6e]"
                 >
                   {link.label}
-                </a>
+                </Link>
               ) : (
                 <Link
                   href={link.href}
@@ -61,7 +80,7 @@ export default function Navbar() {
 
         <div className="hidden items-center gap-4 md:flex">
           <Link
-            href="#contact"
+            href={isHome ? "#contact" : "/#contact"}
             className="rounded-lg bg-[#0ea5e9] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#0284c7]"
           >
             Shop Now
@@ -90,13 +109,31 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <li key={link.href}>
                 {link.href === "#about" ? (
-                  <a
-                    href="#about"
-                    onClick={handleAboutClick}
+                  isHome ? (
+                    <a
+                      href="#about"
+                      onClick={handleAboutClick}
+                      className="block font-medium text-slate-700 hover:text-[#0c4a6e]"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      href="/#about"
+                      onClick={() => setMobileOpen(false)}
+                      className="block font-medium text-slate-700 hover:text-[#0c4a6e]"
+                    >
+                      {link.label}
+                    </Link>
+                  )
+                ) : link.href.startsWith("#") ? (
+                  <Link
+                    href={isHome ? link.href : `/${link.href}`}
+                    onClick={() => setMobileOpen(false)}
                     className="block font-medium text-slate-700 hover:text-[#0c4a6e]"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 ) : (
                   <Link
                     href={link.href}
@@ -110,7 +147,7 @@ export default function Navbar() {
             ))}
             <li>
               <Link
-                href="#contact"
+                href={isHome ? "#contact" : "/#contact"}
                 onClick={() => setMobileOpen(false)}
                 className="block rounded-lg bg-[#0ea5e9] px-4 py-2 text-center font-semibold text-white"
               >

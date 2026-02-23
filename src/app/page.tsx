@@ -6,10 +6,12 @@ import FeaturedProducts from "@/components/FeaturedProducts";
 import OurPartners from "@/components/OurPartners";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import ScrollToHash from "@/components/ScrollToHash";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
+      <ScrollToHash />
       <HeroSlider />
       <TrustSection />
       <ProductCategories />
