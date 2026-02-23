@@ -18,7 +18,7 @@ export default function Navbar() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex flex-col">
           <span className="text-xl font-bold tracking-tight text-[#0c4a6e]">
-            acrostone
+            Acrostone
           </span>
           <span className="text-xs font-medium text-slate-500">
             Dental & Medical Supplies
