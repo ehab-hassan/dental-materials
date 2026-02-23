@@ -1,4 +1,9 @@
+"use client";
+
 import Link from "next/link";
+import Image from "next/image";
+
+import acrostoneLogo from "@/images/acrostone_logo.png";
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -15,12 +20,25 @@ const categories = [
 ];
 
 export default function Footer() {
+  const handleAboutClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    document.getElementById("about")?.scrollIntoView({ behavior: "smooth", block: "center" });
+  };
+
   return (
     <footer className="bg-[#0c4a6e] text-white">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <p className="text-xl font-bold">acrostone</p>
+            <Link href="/" className="inline-block">
+              <Image
+                src={acrostoneLogo}
+                alt="Acrostone - Dental & Medical Supplies"
+                className="h-10 w-auto object-contain brightness-0 invert sm:h-12"
+                width={180}
+                height={48}
+              />
+            </Link>
             <p className="mt-3 text-sm text-white/80">
               Leading dental and medical supplies distributor in Egypt. Trusted since 1986.
             </p>
@@ -38,9 +56,19 @@ export default function Footer() {
             <ul className="mt-4 space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-sm text-white/80 hover:text-white transition-colors">
-                    {link.label}
-                  </Link>
+                  {link.href === "#about" ? (
+                    <a
+                      href="#about"
+                      onClick={handleAboutClick}
+                      className="text-sm text-white/80 hover:text-white transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link href={link.href} className="text-sm text-white/80 hover:text-white transition-colors">
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
