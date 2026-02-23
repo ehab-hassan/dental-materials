@@ -107,8 +107,10 @@ export default function HeroSlider() {
                   <Image
                     src={slide.titleLogo}
                     alt={slide.title}
-                    width={200}
-                    height={50}
+                    width={480}
+                    height={120}
+                    sizes="(max-width: 640px) 320px, 384px"
+                    quality={95}
                     className="w-full h-auto object-contain"
                   />
                 </div>
