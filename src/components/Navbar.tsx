@@ -9,7 +9,7 @@ import acrostoneLogo from "@/images/acrostone_logo.png";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "#about", label: "About Us" },
-  { href: "#products", label: "Products" },
+  { href: "/products", label: "Products" },
   { href: "#contact", label: "Contact" },
 ];
 

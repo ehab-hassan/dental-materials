@@ -21,7 +21,7 @@ const slides = [
     title: "Acrostone Dental Materials",
     subtitle: "Advanced acrylic solutions engineered for precision, durability, and laboratory excellence.",
     cta: "Shop Now",
-    href: "#products",
+    href: "/products",
     image: hero2,
     bg: "linear-gradient(135deg, #082f49 0%, #0c4a6e 50%, #0e7490 100%)",
     topGradient: "linear-gradient(to bottom, rgba(8, 47, 73, 0.85) 0%, rgba(12, 74, 110, 0.4) 55%, transparent 80%)",

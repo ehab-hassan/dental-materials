@@ -37,7 +37,7 @@ export default function ProductCategories() {
           {categories.map((cat, i) => (
             <Link
               key={i}
-              href="#products"
+              href="/products"
               className="group relative aspect-square overflow-hidden rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0c4a6e] focus:ring-offset-2"
             >
               {"image" in cat && cat.image ? (

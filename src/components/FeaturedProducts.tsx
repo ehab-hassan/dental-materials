@@ -47,7 +47,7 @@ export default function FeaturedProducts() {
             </p>
           </div>
           <Link
-            href="#products"
+            href="/products"
             className="inline-flex items-center gap-1 text-sm font-semibold text-[#0c4a6e] hover:text-[#0e7490] transition-colors whitespace-nowrap"
           >
             View All Products
